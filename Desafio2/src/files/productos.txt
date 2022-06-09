@@ -1,0 +1,8 @@
+[
+  {
+    "title": "arroz",
+    "price": 200,
+    "thumbnail": "https://abcd.com.ar/00268300/00268392.jpg",
+    "id": 1
+  }
+]
