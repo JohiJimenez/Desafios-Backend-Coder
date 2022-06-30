@@ -20,11 +20,6 @@ let products = [];
 //       title: 'remera',
 //       price: '900',
 //       thumbnail: 'https://cdn1.iconfinder.com/data/icons/life-style-and-activities-fill-outline/64/shirt-t-tshirt-sport-apparel-clothes-cotton-128.png'
-//     },
-//     {
-//       title: 'pantalon',
-//       price: '3500',
-//       thumbnail: 'https://cdn3.iconfinder.com/data/icons/fashion-beauty-vol-1/512/jeans_denim_trousers_pants-128.png'
 //     }
 //   ]
 
