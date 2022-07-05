@@ -29,12 +29,12 @@ io.on('connection', async socket => {
         data.time = new Date().toLocaleTimeString()
         data.date = new Date().toLocaleDateString()
         log.push(data);
-        io.emit('log', log);
-    })
+        socket.emit('log', log);
+        console.log(log)
 
+    })
     socket.on('registered', data => {
         socket.emit('log', log);
     })
-
 })
 
