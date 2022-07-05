@@ -18,7 +18,7 @@ app.set('view engine','handlebars');
 
 let products=[];
 app.get('/',(req,res)=>{
-    //res.send(products);
+   // res.send(products);
     res.render('home')
 })
 
