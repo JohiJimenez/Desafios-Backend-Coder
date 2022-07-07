@@ -14,11 +14,11 @@ router.get('/:id', (req, res) => {
     productsMethods.getById(id).then(result => res.send(result))
 })
 
-router.post('/', uploader.single('file'),Middleware.isAdmin, (req, res) => {
+router.post('/',uploader.single('file'),Middleware.isAdmin, (req, res) => {
     let product = req.body;
     let file = req.file;
     if (!file) return res.status(500).send({ error: "Couldn't upload file" })
-    product.thumbnail = req.protocol + "://" + req.hostname + ":8080/img/" + file.filename;
+    product.thumbnail = req.protocol+"://"+req.hostname+":8080/img/"+file.filename;
     productsMethods.createProduct(product).then(result => res.send(result));
 })
 
