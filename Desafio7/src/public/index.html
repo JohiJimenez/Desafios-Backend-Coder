@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO PRIMERA BASE DE DATOS</title>
+    <link rel="shortcut icon" href="#">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row offset-md-3">
+        <div class="col-md-6">
+            <h1>Ingrese Producto:</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form id="productForm">
+
+                <div class="form-group mb-3">
+                    <input type="text" name="title" placeholder="Nombre de producto" class="form-control">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="number" name="price" class="form-control" placeholder="Precio">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" name="thumbnail" placeholder="Link de imagen" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">Cargar producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <span id="productsTemplate"></span>
+    <div class="row offset-md-3">
+        <div class="col-md-6">
+            <h1>Centro de Mensajes</h1>
+            <input id="chatBox" placeholder="Ingresá un mensaje...">
+            <input disabled id="enviar" class="btn btn-primary my-2" type="submit" value="Enviar!">
+        </div>
+    </div>
+    <p id="log"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
