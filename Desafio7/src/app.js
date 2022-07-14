@@ -38,7 +38,9 @@ io.on('connection', async socket => {
         data.date = new Date().toLocaleDateString()
         log.push(data);
         chatService.addTable(data)
-        io.emit('log', log);
+        socket.emit('log', log);
+         //io.emit('log', log);
+        console.log(log)
     })
 
     socket.on('registered', data => {

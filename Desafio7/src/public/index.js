@@ -32,7 +32,7 @@ socket.on('productsReg', (data) => {
 
 // CHAT DE USUARIOS
 
-let chatBox = document.getElementById('chatBox');
+let chatBox = document.getElementById('SendChat');
 
 Swal.fire({
     title: "Ingresa al Chat",
@@ -47,14 +47,12 @@ Swal.fire({
     socket.emit('registered', user);
 })
 
-chatBox.addEventListener('keyup', (evt) => {
-    if (evt.key === "Enter") {
-        if (chatBox.value.trim().length > 0) {
-            socket.emit('message', { user: user, message: chatBox.value.trim() }) //si le saco el trim me deja los espacios de antes del texto
-            chatBox.value = "";
-        }
-    }
+chatBox.addEventListener('click', e => {
+    const message = document.getElementById('txtMessage').value
+    socket.emit('message', { user: user, message: txtMessage.value.trim() })
+    document.getElementById('txtMessage').value = '';
 })
+
 
 socket.on('newUser', (data) => {
 
