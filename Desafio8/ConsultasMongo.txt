@@ -1,0 +1,57 @@
+use ecommerce
+
+db.createCollection("products")
+
+db.createCollection("messages")
+
+db.products.insertMany([{title:"Vestido", price: 2200, thumbnail: "http:vestido.jpg"},
+{title:"Falda", price: 1130, thumbnail: "http:falda.jpg"},
+{tile:"Campera", price:3700, thumbnail: "campera.jpg"},
+{title:"Camisa", price: 840, thumbnail: "camisa.jpg"},
+{title:"Croptop", price: 560, thumbnail: "croptop.jpg"}, 
+{title:"Remera", price: 940, thumbnail: "remera.jpg"},
+{title:"Pantalon", price: 1210, thumbnail: "pantalon2.jpg"}, 
+{title:"Campera", price: 3000, thumbnail: "campera.jpg"},
+{title:"Buzo", price: 2860, thumbnail: "buzo.jpg"},
+{title: "Buzo", price: 2180, thumbnail:"buzo2.jpg"}])
+
+db.messages.insertMany([{fecha: 16072022, hora: 1150, usuario: "Johana", message: "Hola"}, 
+{fecha:16072022, hora: 1151, usuario: "Julio", message: "Hola Joha, como estas?"},
+{fecha: 16072002, hora: 1152, usuario: "Julio", message: "Bien y tu?"},
+{fecha:16072022, hora: 1154, usuario: "Johana", message: "Nos vemos mas tarde"},
+{fecha:16072022, hora: 1152, usuario: "Johana", message:"En la casa de Vero, vamos a cenar"},
+{fecha: 16072022, hora: 1153, usuario: "Julio", message: "perfecto a las 21 estoy"},
+{fecha:16072022, hora: 1815, usuario: "Julio", message: "A que hora paso a buscarte"},
+{fecha: 16072022, hora: 1816, usuario: "Johana", message: "A las 22 horas"},
+{fecha:16072022, hora: 1816, usuario: "Julio", message: "Perfecto"},
+{fecha:16072022, hora: 1816, usuario: "Julio", message: "Te aviso cuando este por salir"}])
+
+db.products.find()
+
+db.messages.find()
+
+db.products.countDocuments({})
+
+db.messages.countDocuments({})
+
+
+				CRUD SOBRE LA COLECCION PRODUCTS
+
+db.products.insertOne({title:"Campera", price: 3150, thumbnail: "campera2.jpg"})
+
+db.products.find({$and:[{title:"Croptop"},{price:{$lt:1000}}]})
+db.products.find({price:{$lt:1000}})
+
+db.products.find({$and:[{title:"Campera"},{price:{$in:[1000,3000]}}]})
+db.products.find({price:{$in:[1000,3000]}})
+
+db.products.find({$and:[{title:"Campera"},{price:{$gt:3000}}]})
+db.products.find({price:{$gt:3000}})
+
+ db.products.find().sort({price:1}).skip(2).limit(1)
+
+ db.products.updateMany({}, {$set: {stock: 100}}, {upsert: true})
+
+db.products.update({price: {$gte: 4000}},{$set:{stock:0}})
+
+db.products.deleteMany({price:{$lt:1000}})
