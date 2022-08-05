@@ -1,5 +1,5 @@
 const socket = io();
-let user;
+let id;
 
 //FORMULARIO
 
@@ -27,6 +27,8 @@ socket.on('productsReg', (data) => {
     })
 })
 
+
+
 // CHAT DE USUARIOS
 
 let chatBox = document.getElementById('SendChat');
@@ -40,13 +42,14 @@ Swal.fire({
     },
     allowOutsideClick: false //no puedes salir si das click afuera
 }).then(result => {
-    user = result.value;
-    socket.emit('registered', user);
+    id = result.value;
+    socket.emit('registered', id);
 })
+
 
 chatBox.addEventListener('click', e => {
     const message = document.getElementById('txtMessage').value
-    socket.emit('message', { user: user, message: txtMessage.value.trim() })
+    socket.emit('message', { id: id, message: txtMessage.value.trim(), name: name.value, last_Name: last_Name.value,age: age.value, nickname: nickname.value })
     document.getElementById('txtMessage').value = '';
 })
 
@@ -59,7 +62,7 @@ socket.on('log', data => {
     let log = document.getElementById('log')
     let messages = "";
     data.forEach(message => {
-        messages = messages + `<b style="color:blue;">${message.user}</b>
+        messages = messages + `<b style="color:blue;">${message.id}</b>
         <span style="color:brown;">${message.date} ${message.time} </span>
         <i style="color:green;">${message.message}</i>
         </br>`;

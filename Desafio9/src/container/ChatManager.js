@@ -1,7 +1,13 @@
-const options= require ( "../options/mysql3config.js")
-const knex= require ("knex");
+const options = require("../options/mysql3config.js")
+const knex = require("knex");
+const fs = require('fs')
+
+const path = __dirname + "/../db/chat.json"
+
 
 const database = knex(options);
+
+let dataList = []
 
 class ChatManager {
 
@@ -14,10 +20,15 @@ class ChatManager {
       return { status: "success", message: "Message Add" }
     } else {
       await database.schema.createTable('chat', table => {
-        table.string('user', 20);
+        table.string('id', 20);
         table.string('message', 50).nullable(false);
+        table.string('name', 10);
+        table.string('last_Name', 10);
+        table.string('age', 2);
+        table.string('nickname', 10);
         table.string('time', 10);
         table.string('date', 10);
+      
       })
       await database('chat').insert(message)
       console.log("Se creo la Tabla y se inserto el mensaje")
@@ -25,7 +36,14 @@ class ChatManager {
     }
   }
 
+ 
+
+  getAll = async () =>{ 
+
+    return await database.from('chat').select('*') 
+  }
 
 }
 
-module.exports= ChatManager;
+
+module.exports = ChatManager;

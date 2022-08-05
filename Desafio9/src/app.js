@@ -3,6 +3,9 @@ const { Server } = require('socket.io');
 const ProductManager = require('./container/ProductManager.js')
 const ChatManager = require  ('./container/ChatManager.js')
 const productsFaker = require ('./routes/productsfaker.js')
+const normalized = require ('./routes/normalizedM.js')
+
+const handlebars= require ('express-handlebars')
 
 PORT = process.env.PORT || 8080;
 
@@ -11,7 +14,12 @@ const server = app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
 const io = new Server(server);
 
 app.use(express.static(__dirname + '/public'));
-app.use("/api/productos-test", productsFaker);
+app.engine('handlebars',handlebars.engine());
+app.set('view engine','handlebars');
+
+app.use("/products-test", productsFaker);
+app.use("/normalized", normalized);
+
 
 
 const productsService = new ProductManager;
@@ -22,6 +30,11 @@ let log = [];
 io.on('connection', async socket => {
     //se repite para que se muestren en tiempo real lo que ya habia antes para cada cliente que se conecte
     let products = await productsService.getAll();
+
+    //Si no esta la Base de Datos Creada no funciona
+    // let result= await chatService.getAll();
+    // socket.emit('log', result); 
+
     io.emit('productsReg', products)
 
     socket.on('sendProduct', async data => {
@@ -31,15 +44,13 @@ io.on('connection', async socket => {
     })
 
     socket.broadcast.emit('newUser')
-
-    socket.on('message', data => {
+    socket.on('message', async (data) => {
         data.time = new Date().toLocaleTimeString()
-        data.date = new Date().toLocaleDateString()
-        log.push(data);
-        chatService.addTable(data)
-        socket.emit('log', log);
-        console.log(log)
-        console.log("Se genero un Mensaje")
+        data.date = new Date().toLocaleDateString()  
+        await chatService.addTable(data)
+        let result= await chatService.getAll();
+
+        socket.emit('log', result);  
 
     })
     socket.on('registered', data => {

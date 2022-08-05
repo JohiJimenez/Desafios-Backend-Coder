@@ -12,13 +12,12 @@ router.get("/", (req, res) => {
     
     for (let index = 0; index < 5; index++) {
         arrayFaker.push({
-            title: faker.commerce.productName(),
+            title: faker.commerce.product(),
             price: faker.commerce.price(),
             thumbnail: faker.image.image()
         })
     }
-    res.send(arrayFaker)
-    
+    res.render('products', {products: arrayFaker, productsExists: true })
     
 });
 
