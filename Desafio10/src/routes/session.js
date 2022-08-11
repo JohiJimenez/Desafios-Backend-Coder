@@ -1,12 +1,10 @@
 const express = require('express');
-
-
 const app = express();
 const { Router } = express;
 const router = new Router();
 
 router.get("/login", (req, res) => {
-  return res.render("login.handlebars");
+ return res.render("login.handlebars");
 });
 
 router.post("/login", (req, res) => {

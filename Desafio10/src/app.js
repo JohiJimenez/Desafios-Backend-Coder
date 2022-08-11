@@ -5,39 +5,20 @@ const cookieParser = require('cookie-parser');
 const ProductManager = require('./container/ProductManager.js')
 const ChatManager = require  ('./container/ChatManager.js')
 const sessionRouter = require ('./routes/session.js')
-
 const handlebars= require ('express-handlebars')
 
-PORT = process.env.PORT || 8080;
-
 const app = express();
-const server = app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
-const io = new Server(server);
 
-app.use(express.static("./views/layouts"));
-app.use(express.static(__dirname + '/public'));
-app.engine('handlebars',handlebars.engine());
-app.set('view engine','handlebars');
-app.use(cookieParser());
-
-
-app.use("/",sessionRouter)
-
-const productsService = new ProductManager;
-const chatService= new ChatManager;
-
-let log = [];
-
-/*      PERSISTENCIA POR MONGO ATLAS     */
+//Persistemcia Mongo Atlas
 const MongoStore = require("connect-mongo");
 const adavancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-/* ------------------------------------- */
+
 
 //Session config
 app.use(
   session({
     store: MongoStore.create({
-      mongoUrl: 'mongodb+srv://Johi:17418016jC@cluster0.nwwqozn.mongodb.net/Usersessions?retryWrites=true&w=majority' ,
+      mongoUrl:'mongodb+srv://Johi:17418016jC@cluster0.nwwqozn.mongodb.net/Sessions?retryWrites=true&w=majority' ,
       ttl:200,
       mongoOptions: adavancedOptions,
     }),
@@ -46,6 +27,35 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+//Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static("../src/views/layouts"));
+app.use(express.static(__dirname + '/public'));
+app.use(cookieParser());
+
+
+//Motor de Plantilla
+app.engine('handlebars',handlebars.engine());
+app.set('view engine','handlebars');
+
+//Rutas
+app.use("/",sessionRouter)
+
+//Server Conecction - Socket Conecction
+PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
+const io = new Server(server);
+
+
+const productsService = new ProductManager;
+const chatService= new ChatManager;
+
+let log = [];
+
+
 io.on('connection', async socket => {
     //se repite para que se muestren en tiempo real lo que ya habia antes para cada cliente que se conecte
     let products = await productsService.getAll();
