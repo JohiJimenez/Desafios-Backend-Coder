@@ -15,8 +15,12 @@ router.post("/login", (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
-    
-  res.render("bye.handlebars");
+  req.session.destroy((err) => {
+    if (!err) {
+      res.render("bye.handlebars");
+    } else res.send({ status: "Logout ERROR", body: err });
+  });
+  
   });
 
 module.exports = router;
