@@ -3,16 +3,22 @@ const app = express();
 const { Router } = express;
 const router = new Router();
 
+
 router.get("/login", (req, res) => {
- return res.render("login.handlebars");
+  if (req.session.user) {
+    return res.redirect("/")
+  }else{
+     return res.render("login.handlebars");
+  }
+
 });
 
 router.post("/login", (req, res) => {
-  let username = req.body.name;
-  console.log(username);
+  username = req.body.name;
   req.session.user = username;
-   return res.redirect('/');
+   return res.redirect("/");
 });
+
 
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
@@ -23,4 +29,4 @@ router.get("/logout", (req, res) => {
   
   });
 
-module.exports = router;
+module.exports = router

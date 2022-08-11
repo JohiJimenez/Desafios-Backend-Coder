@@ -32,7 +32,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("../src/views/layouts"));
+app.use(express.static("./views/layouts"));
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 
@@ -42,6 +42,7 @@ app.engine('handlebars',handlebars.engine());
 app.set('view engine','handlebars');
 
 //Rutas
+  
 app.use("/",sessionRouter)
 
 //Server Conecction - Socket Conecction
@@ -57,11 +58,12 @@ let log = [];
 
 
 io.on('connection', async socket => {
-    //se repite para que se muestren en tiempo real lo que ya habia antes para cada cliente que se conecte
+  //se repite para que se muestren en tiempo real lo que ya habia antes para cada cliente que se conecte
     let products = await productsService.getAll();
 
     //Si no esta la Base de Datos Creada no funciona
     let result= await chatService.getAll();
+
     socket.emit('log', result); 
 
     io.emit('productsReg', products)
@@ -69,10 +71,14 @@ io.on('connection', async socket => {
     socket.on('sendProduct', async data => {
         await productsService.createProduct(data);
         let products = await productsService.getAll();
+        
         io.emit('productsReg', products)
     })
 
-    socket.broadcast.emit('newUser')
+    socket.broadcast.emit('newUser', ()=>{
+     
+    } )
+
     socket.on('message', async (data) => {
         data.time = new Date().toLocaleTimeString()
         data.date = new Date().toLocaleDateString()  

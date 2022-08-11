@@ -43,8 +43,7 @@ chatBox.addEventListener('click', e => {
 
 
 
-socket.on('newUser', (data) => {
-
+socket.on('newUser', () => {
 
 })
 
