@@ -2,6 +2,8 @@ const express = require('express');
 const { Server } = require('socket.io');
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
+const path= require('path');
+
 const ProductManager = require('./container/ProductManager.js')
 const ChatManager = require  ('./container/ChatManager.js')
 const sessionRouter = require ('./routes/session.js')
@@ -19,7 +21,7 @@ app.use(
   session({
     store: MongoStore.create({
       mongoUrl:'mongodb+srv://Johi:17418016jC@cluster0.nwwqozn.mongodb.net/Sessions?retryWrites=true&w=majority' ,
-      ttl:200,
+      ttl:10,
       mongoOptions: adavancedOptions,
     }),
     secret: "secret",
@@ -33,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("./views/layouts"));
+app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 
@@ -42,7 +45,7 @@ app.engine('handlebars',handlebars.engine());
 app.set('view engine','handlebars');
 
 //Rutas
-  
+
 app.use("/",sessionRouter)
 
 //Server Conecction - Socket Conecction

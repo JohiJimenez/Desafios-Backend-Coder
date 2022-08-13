@@ -6,17 +6,18 @@ const router = new Router();
 
 router.get("/login", (req, res) => {
   if (req.session.user) {
-    return res.redirect("/")
+    return res.render("/inicio")
   }else{
      return res.render("login.handlebars");
   }
 
-});
+})
 
 router.post("/login", (req, res) => {
   username = req.body.name;
   req.session.user = username;
-   return res.redirect("/");
+
+   return res.render("inicio",{nombre: req.session.user});
 });
 
 

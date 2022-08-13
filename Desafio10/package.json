@@ -18,7 +18,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon src/app.js"
+    
   },
   "keywords": [],
   "author": "",
