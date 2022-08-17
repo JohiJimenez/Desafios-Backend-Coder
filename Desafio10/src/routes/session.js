@@ -5,26 +5,21 @@ const router = new Router();
 
 
 router.get("/login", (req, res) => {
-  if (req.session.user) {
-    return res.render("/inicio")
-  }else{
-     return res.render("login.handlebars");
+     return res.render("login");
   }
-
-})
+)
 
 router.post("/login", (req, res) => {
   username = req.body.name;
   req.session.user = username;
-
-   return res.render("inicio",{nombre: req.session.user});
+  return res.redirect("/");
 });
 
 
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (!err) {
-      res.render("bye.handlebars");
+      res.render("bye");
     } else res.send({ status: "Logout ERROR", body: err });
   });
   

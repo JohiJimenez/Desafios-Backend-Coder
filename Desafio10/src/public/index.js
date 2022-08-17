@@ -51,7 +51,7 @@ socket.on('log', data => {
     let log = document.getElementById('log')
     let messages = "";
     data.forEach(message => {
-        messages = messages + `<b style="color:blue;">${message.id}</b>
+        messages = messages + `<b style="color:blue;">${message.nickname}</b>
         <span style="color:brown;">${message.date} ${message.time} </span>
         <i style="color:green;">${message.message}</i>
         </br>`;

@@ -45,8 +45,16 @@ app.engine('handlebars',handlebars.engine());
 app.set('view engine','handlebars');
 
 //Rutas
+app.get("/", (req, res) => {
+  if (!req.session.user) {
+    res.redirect("/login");
+    console.log("no hay usuario")
+  }
+  return res.render("inicio",{nombre: req.session.user}); res.render
+});
 
 app.use("/",sessionRouter)
+
 
 //Server Conecction - Socket Conecction
 PORT = process.env.PORT || 8080;
