@@ -50,7 +50,6 @@ app.get("/", (req, res) => {
     res.redirect("/login");
     console.log("no hay usuario")
   }
-  return res.render("inicio",{nombre: req.session.user})
 });
 
 app.use("/",sessionRouter)

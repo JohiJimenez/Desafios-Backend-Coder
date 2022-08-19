@@ -12,7 +12,7 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
   username = req.body.name;
   req.session.user = username;
-  return res.redirect("/");
+  return res.render("inicio",{nombre: req.session.user})
 });
 
 
