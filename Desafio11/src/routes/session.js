@@ -5,14 +5,15 @@ const router = new Router();
 
 
 router.get("/login", (req, res) => {
-     return res.render("login");
+  if (!req.session.user) {
+    res.render("login")
   }
-)
+ })
 
 router.post("/login", (req, res) => {
   username = req.body.name;
   req.session.user = username;
-  return res.redirect("/");
+  return res.render("inicio",{nombre: req.session.user})
 });
 
 
@@ -23,6 +24,10 @@ router.get("/logout", (req, res) => {
     } else res.send({ status: "Logout ERROR", body: err });
   });
   
+  });
+
+  router.get("/errorLogin", (req, res) => {
+    res.render("errorLogin");
   });
 
 module.exports = router
