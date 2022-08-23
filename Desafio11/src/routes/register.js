@@ -10,15 +10,6 @@ const router = new Router();
 const usersService= require('../model/users')
 
 
-//Autenticacion
-function auth(req, res, next) {
-  if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.render("register-error");
-  }
-}
-
 router.get("/errorRegister", (req, res) => {
     res.render("errorRegister");
   });
@@ -28,18 +19,18 @@ router.get("/errorRegister", (req, res) => {
   });
 
   router.post("/register", async (req, res) => {
-    const name= req.body.name
+    const username= req.body.username
    const password= req.body.password
-    usersService.findOne({name}, async (err, user) => {
+    usersService.findOne({username}, async (err, user) => {
       if (err) console.log(err);
-      if (user) res.render("register-error");
+      if (user) res.render("errorRegister");
       if (!user) {
         const hashedPassword = await bcrypt.hash(password, 10);
         const userData = new usersService({
-          name,
+          username,
           password: hashedPassword
         });
-        console.log(name,password);
+        console.log(username,password);
         console.log(userData)
         await userData.save();
         res.redirect("/login");

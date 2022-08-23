@@ -9,7 +9,6 @@ const localStrategy = require('passport-local').Strategy;
 const bcrypt= require('bcrypt');
 
 
-const usersService= require('./model/users.js')
 const ProductManager = require('./container/ProductManager.js')
 const ChatManager = require  ('./container/ChatManager.js')
 const sessionRouter = require ('./routes/session.js')
@@ -23,7 +22,7 @@ const MongoStore = require("connect-mongo");
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 //URL Si quiero guardar en Mongo Atlas
-//const URL= 'mongodb+srv://Johi:17418016jC@cluster0.nwwqozn.mongodb.net/Sessions?retryWrites=true&w=majority'
+//const URL= 'mongodb+srv://Johi:xxxxxx@cluster0.nwwqozn.mongodb.net/Sessions?retryWrites=true&w=majority'
 
 ////URL Si quiero guardar en Mongo DB
 const URL= 'mongodb://localhost:27017/Desafio-Passport'
@@ -67,36 +66,6 @@ app.set('view engine','handlebars');
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use('register',
-  new localStrategy((name, password, done) => {
-    usersService.findOne({name }, (err, user) => {
-      if (err) console.log(err);
-      if (!user) return done(null, false);
-      bcrypt.compare(password, user.password, (err, isMatch) => {
-        if (err) console.log(err);
-        if (isMatch) return done(null, user);
-        return done(null, false);
-      });
-    });
-  })
-);
-
-
-//Serializar 
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-
-//Deserializar
-passport.deserializeUser(async (id, done) => {
-  const user = await users.findById(id);
-  done(null, user);
-});
-
-
-
 //Rutas
 app.get("/", (req, res) => {
   if (!req.session.user) {
@@ -107,6 +76,7 @@ app.get("/", (req, res) => {
 
 app.use("/",sessionRouter)
 app.use("/",registerRouter)
+
 
 //Server Conecction - Socket Conecction
 PORT = process.env.PORT || 8080;

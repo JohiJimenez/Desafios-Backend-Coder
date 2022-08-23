@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userCollection= 'users'
 
 const userSchema= new mongoose.Schema({
-    name:{
+    username:{
         type: String,
         require: true
     },
