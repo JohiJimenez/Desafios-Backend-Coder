@@ -33,8 +33,6 @@ router.get("/errorRegister", (req, res) => {
           username,
           password: hashedPassword
         });
-        console.log(username,password);
-        console.log(userData)
         await userData.save();
         res.redirect("/login");
       }
