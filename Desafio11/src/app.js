@@ -5,14 +5,14 @@ const cookieParser = require('cookie-parser');
 const path= require('path');
 const mongoose= require('mongoose');
 const passport = require('passport');
-const localStrategy = require('passport-local').Strategy;
-const bcrypt= require('bcrypt');
 
+const usersService= require('./model/users.js')
 
 const ProductManager = require('./container/ProductManager.js')
 const ChatManager = require  ('./container/ChatManager.js')
 const sessionRouter = require ('./routes/session.js')
 const registerRouter = require ('./routes/register.js')
+
 const handlebars= require ('express-handlebars')
 
 const app = express();
@@ -39,11 +39,14 @@ app.use(
   session({
     store: MongoStore.create({
       mongoUrl:URL ,
+      ttl: 600,
       mongoOptions: advancedOptions,
     }),
     secret: "secret",
     resave: false,
     saveUninitialized: false,
+    autoRemove: 'interval',
+    autoRemoveInterval: 10
   })
 );
 
@@ -65,6 +68,20 @@ app.set('view engine','handlebars');
 //Passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Serializar 
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+
+//Deserializar
+passport.deserializeUser(async (id, done) => {
+  const user = await usersService.findById(id);
+  done(null, user);
+});
+
 
 //Rutas
 app.get("/", (req, res) => {

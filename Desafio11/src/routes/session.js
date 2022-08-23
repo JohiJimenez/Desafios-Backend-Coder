@@ -10,28 +10,22 @@ const usersService= require('../model/users.js')
 passport.use(new localStrategy((username, password, done) => {
     usersService.findOne({username }, (err, user) => {
       if (err) console.log(err);
-      if (!user) return done(null, false);
+      if (!user) {
+        console.log(`User : ${username} Not Found`)
+        return done(null, false);
+      }
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) console.log(err);
         if (isMatch) return done(null, user);
-        return done(null, false);
+        if (!isMatch) {
+          console.log('Invalid Password')
+          return done(null, false);
+        }
       });
     });
   })
 );
 
-//Serializar 
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-
-//Deserializar
-passport.deserializeUser(async (id, done) => {
-  const user = await usersService.findById(id);
-  done(null, user);
-});
 
 
 router.get("/login",(req, res) => {
