@@ -39,5 +39,15 @@ router.get("/errorRegister", (req, res) => {
     });
   });
 
-
+//   const data= {
+//     ArgumentosDeEntrada: args,
+//     PathDeEjecucion: process.execPath,
+//     SistemaOperativo: process.platform,
+//     idProcess: process.pid,
+//     NodeVersion: process.version,
+//     CarpetaDelProyecto: process.cwd(),
+//   MemoriaTotalReservada: process.memoryUsage().rss
+// }
+// console.log(data)
   module.exports = router
+

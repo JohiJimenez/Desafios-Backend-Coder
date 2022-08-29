@@ -14,6 +14,7 @@ const ChatManager = require  ('./container/ChatManager.js')
 const sessionRouter = require ('./routes/session.js')
 const registerRouter = require ('./routes/register.js')
 const infoRouter = require ('./routes/info.js')
+const randoms = require ('./routes/randoms.js')
 
 const handlebars= require ('express-handlebars')
 
@@ -89,6 +90,7 @@ app.get("/", (req, res) => {
 app.use("/",sessionRouter)
 app.use("/",registerRouter)
 app.use("/",infoRouter)
+app.use("/",randoms)
 
 
 //Server Conecction - Socket Conecction
