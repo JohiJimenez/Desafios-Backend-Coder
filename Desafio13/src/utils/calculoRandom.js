@@ -1,3 +1,5 @@
+const os = require ('os')
+
 process.on('message', cant=> {
   const num = randoms(cant)
   process.send(num)
@@ -5,15 +7,13 @@ process.on('message', cant=> {
 })
 
 const randoms = (max) => {
-    const numbers = {};
+   const numbers=[]
     for (let i = 0; i < max; i++) {
-      let number = Math.floor(Math.random() * 999) + 1;
-      if (numbers[number]) {
-        numbers[number]++;
-      } else {
-        numbers[number] = 1;
-      }
+      let number = Math.floor(Math.random() * 999999);
+      numbers.push(number)
     }
-    return numbers;
+    const NumCPUs= os.cpus().length
+    return ({num_random: numbers,NumCPUs: NumCPUs});
+    
   };
 
