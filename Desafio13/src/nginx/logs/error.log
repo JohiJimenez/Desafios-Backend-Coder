@@ -92,3 +92,4 @@
 2022/09/10 11:22:48 [notice] 11000#3056: signal process started
 2022/09/10 11:23:27 [notice] 10812#17620: signal process started
 2022/09/10 11:24:25 [notice] 18040#3772: signal process started
+2022/09/10 11:31:08 [error] 3848#10824: *362 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: nginx_node, request: "GET /random/ HTTP/1.1", upstream: "http://127.0.0.1:8083/random/", host: "localhost"

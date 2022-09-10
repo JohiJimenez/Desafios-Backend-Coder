@@ -232,3 +232,6 @@
 127.0.0.1 - - [10/Sep/2022:11:16:01 -0300] "GET /inicio HTTP/1.1" 502 559 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 127.0.0.1 - - [10/Sep/2022:11:22:59 -0300] "GET /inicio HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 127.0.0.1 - - [10/Sep/2022:11:24:28 -0300] "GET /inicio HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+127.0.0.1 - - [10/Sep/2022:11:30:01 -0300] "GET / HTTP/1.1" 200 653 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+127.0.0.1 - - [10/Sep/2022:11:30:56 -0300] "GET /random/ HTTP/1.1" 200 35 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+127.0.0.1 - - [10/Sep/2022:11:31:08 -0300] "GET /random/ HTTP/1.1" 200 35 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
