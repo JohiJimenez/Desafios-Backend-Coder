@@ -7,7 +7,7 @@ const router = new Router();
 
 
 import {usersService} from '../model/users.js'
-import logger from '../utils/logger.js';
+
 
 const localStrategy= Strategy
 passport.use(new localStrategy((username, password, done) => {
@@ -31,8 +31,9 @@ passport.use(new localStrategy((username, password, done) => {
 
 
 
+
 router.get("/login",(req, res) => {
-  logger.info(`[${req.method}] ${req.originalUrl}`)
+ 
     res.render("login")
  })
 

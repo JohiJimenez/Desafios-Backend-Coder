@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 dotenv.config({path:'./src/.env'});
 import compression from 'compression'
 import logger from './utils/logger.js'
+import loggerMiddleware from './middlewars/loggerRoutes.js'
 
 import {usersService} from './model/users.js'
 
@@ -52,6 +53,8 @@ app.use(
 );
 
 //Middlewares
+app.use(loggerMiddleware);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -97,7 +100,7 @@ app.use("/",registerRouter)
 app.use("/",infoRouter)
 app.use("/",randoms)
 
-app.get('*', (req, res) => {
+app.all('*', (req, res) => {
   logger.warn("Page not found");
   res.status(404).json({"error": "Route does Not Exists"})
 });
