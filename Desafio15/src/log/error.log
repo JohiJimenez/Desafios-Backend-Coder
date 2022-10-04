@@ -1,0 +1,22 @@
+[2022-09-12T22:37:23.083] [ERROR] default - Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1432:16)
+    at listenInCluster (node:net:1480:12)
+    at Server.listen (node:net:1568:7)
+    at Function.listen (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio14\node_modules\express\lib\application.js:635:24)
+    at file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio14/src/app.js:107:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:533:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+[2022-10-03T12:26:08.804] [ERROR] default - ⛔ Error al conectarse a MongoDB
+[2022-10-03T12:27:22.551] [ERROR] default - MongooseError: Operation `users.insertOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio15\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
