@@ -1,0 +1,419 @@
+[2022-09-12T22:37:23.083] [ERROR] default - Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1432:16)
+    at listenInCluster (node:net:1480:12)
+    at Server.listen (node:net:1568:7)
+    at Function.listen (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio14\node_modules\express\lib\application.js:635:24)
+    at file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio14/src/app.js:107:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:533:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+[2022-10-03T12:26:08.804] [ERROR] default - ⛔ Error al conectarse a MongoDB
+[2022-10-03T12:27:22.551] [ERROR] default - MongooseError: Operation `users.insertOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio15\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[2022-10-21T10:40:09.743] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T10:47:56.338] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T10:49:25.473] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T10:50:17.734] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T11:01:25.766] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T11:03:03.953] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T11:03:32.659] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T12:38:27.875] [ERROR] default - MongoServerError: E11000 duplicate key error collection: usersInfo.products index: code_1 dup key: { code: null }
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection_pool.js:299:25
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:212:17
+    at handleOperationResult (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:287:20)
+    at Connection.onMessage (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: null },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2022-10-21T12:39:53.064] [ERROR] default - Error: products validation failed: price: Path `price` is required., title: Path `title` is required.
+    at ValidationError.inspect (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\error\validation.js:48:26)
+    at formatValue (node:internal/util/inspect:790:19)
+    at inspect (node:internal/util/inspect:350:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2241:40)
+    at Object.format (node:internal/util/inspect:2098:10)
+    at basicLayout (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\appenders\logLevelFilter.js:10:7
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>) {
+  errors: {
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    title: ValidatorError: Path `title` is required.
+        at validate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1337:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\schematype.js:1321:7)
+        at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'title',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-10-21T12:40:06.171] [ERROR] default - MongoServerError: E11000 duplicate key error collection: usersInfo.products index: code_1 dup key: { code: null }
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection_pool.js:299:25
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:212:17
+    at handleOperationResult (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:287:20)
+    at Connection.onMessage (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: null },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2022-10-21T12:40:22.444] [ERROR] default - MongoServerError: E11000 duplicate key error collection: usersInfo.products index: code_1 dup key: { code: null }
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection_pool.js:299:25
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:212:17
+    at handleOperationResult (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:287:20)
+    at Connection.onMessage (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: null },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2022-10-21T12:41:34.170] [ERROR] default - MongoServerError: E11000 duplicate key error collection: usersInfo.products index: code_1 dup key: { code: null }
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\operations\insert.js:53:33
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection_pool.js:299:25
+    at C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:212:17
+    at handleOperationResult (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\sdam\server.js:287:20)
+    at Connection.onMessage (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:219:9)
+    at MessageStream.<anonymous> (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\connection.js:60:60)
+    at MessageStream.emit (node:events:513:28)
+    at processIncomingData (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:132:20)
+    at MessageStream._write (C:\Users\JOHAN\OneDrive\Escritorio\Backend\Desafios\Desafio16\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:391:12) {
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: null },
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[2022-10-22T11:45:40.150] [ERROR] default - ReferenceError: productsExists is not defined
+    at ProductService.getAll (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/services/productsService.js:24:36)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/controllers/userController.js:46:18)
+[2022-10-22T11:46:00.933] [ERROR] default - ReferenceError: productsExists is not defined
+    at ProductService.getAll (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/services/productsService.js:24:35)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/controllers/userController.js:46:18)
+[2022-10-22T11:46:30.244] [ERROR] default - ReferenceError: productsExists is not defined
+    at ProductService.getAll (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/services/productsService.js:24:35)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/controllers/userController.js:46:18)
+[2022-10-22T12:50:36.425] [ERROR] default - ReferenceError: productsExists is not defined
+    at ProductService.getAll (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/services/productsService.js:24:35)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async login (file:///C:/Users/JOHAN/OneDrive/Escritorio/Backend/Desafios/Desafio16/src/controllers/userController.js:46:18)
