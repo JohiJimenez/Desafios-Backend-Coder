@@ -19,8 +19,9 @@ export default class ProductService extends ProductsDao{
 
     async getAll() {
         try {
-            let products = await productsModel.find();
-            return { status: "success", products: products}
+            return await productsModel.find();
+            // let products = await productsModel.find();
+            // return { status: "success", products: products}
         } catch (error) {
             this.logger.error(error);
             return false;
@@ -46,7 +47,6 @@ export default class ProductService extends ProductsDao{
             return false;
         }
     }
-    
-    
+ 
     
 }

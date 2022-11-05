@@ -1,6 +1,6 @@
 import {buildSchema} from "graphql";
 import {ProductoType} from "./types/productType.js";
-import {GetAllProductosQuery} from "./queries/getAllProducts.query.js";
+import {GetAllProductosQuery} from "./queries/getAllProducts.js";
 import {GetProductByIdQuery} from "./queries/getProductById.js";
 import {ProductoNewInput} from "./inputs/ProductsNew.js";
 import {CreateProductoMutation} from "./mutations/createProduct.js";
