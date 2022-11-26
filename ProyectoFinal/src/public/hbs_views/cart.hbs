@@ -1,0 +1,48 @@
+<form action="/productos">
+    <input type="submit" value="Products">
+</form>
+
+<form action="/chat">
+    <input type="submit" value="Chat">
+</form>
+<h1>Cart</h1>
+<div>
+    {{#if products}}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Thumbnail</th>
+            <th>Quantity</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.description}}</td>
+                <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
+                <td>{{this.quantity}}</td>
+                <td>
+                    <form action="/carrito/delete/{{this.id}}" method="POST">
+                        <input type="submit" value="Remove From Cart">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h2>No hay productos en el carrito</h2>
+    {{/if}}
+</div>
+
+<h2>Total Price ${{this.total_Price}}</h2>
+
+<form action="/orders/buy" method="POST">
+    <input type="submit" value="Complete the Purchase">
+</form>

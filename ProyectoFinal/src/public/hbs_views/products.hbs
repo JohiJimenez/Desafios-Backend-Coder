@@ -1,0 +1,46 @@
+<form action="/logout">
+    <input type="submit" value="Logout">
+</form>
+
+<form action="/cart">
+    <input type="submit" value="Cart">
+</form>
+
+<form action="/chat">
+    <input type="submit" value="Chat">
+</form>
+
+<h1>Products</h1>
+<div>
+    {{#if products}}
+    <table>
+        <thead>
+            <th>title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Thumbnail</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.description}}</td>
+                <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
+                <td>
+                    <form action="/carrito/{{this.id}}" method="POST">
+                        <input type="number" name="quantity" placeholder="Items Quantity">
+                        <input type="submit" value="Add To Cart">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h2>No hay productos</h2>
+    {{/if}}
+</div>

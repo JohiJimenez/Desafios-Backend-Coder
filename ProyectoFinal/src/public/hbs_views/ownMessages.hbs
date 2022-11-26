@@ -1,0 +1,18 @@
+<form action="/carrito">
+    <input type="submit" value="Cart">
+</form>
+<form action="/products">
+    <input type="submit" value="Products">
+</form>
+
+<form action="/chat">
+    <input type="submit" value="Chat">
+</form>
+
+{{#each messages}}
+<div>
+    <strong style='color:blue'>{{this.email}}</strong>
+    <p style='color:brown'>{{this.time_Stamp}}</p>
+    <i style='color:green'>{{this.message}}</i>
+</div>
+{{/each}}

@@ -1,0 +1,26 @@
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../../main.js"></script>
+</head>
+<form action="/cart">
+    <input type="submit" value="Cart">
+</form>
+<form action="/products">
+    <input type="submit" value="Products">
+</form>
+
+<form action="/chat/{{this.email}}">
+    <input type="submit" value="Your messages">
+</form>
+
+
+<h1>Chat</h1>
+<form onsubmit="return sendMessage()">
+    <input type="text" id="message" required>
+    <input type="hidden" id="email" value="{{this.email}}">
+    <input type="submit" value="Enviar mensaje">
+</form>
+
+<div id="messages">
+
+</div>

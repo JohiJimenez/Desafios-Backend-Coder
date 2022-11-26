@@ -1,0 +1,70 @@
+<form action="/cart">
+    <input type="submit" value="Cart">
+</form>
+<form action="/chat">
+    <input type="submit" value="Chat">
+</form>
+<form action="/logout">
+    <input type="submit" value="Logout">
+</form>
+
+<h1>Products</h1>
+<div>
+    {{#if products}}
+    <table>
+        <thead>
+            <th>title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Thumbnail</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.description}}</td>
+                <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
+                <td>
+                    <form action="/carrito/{{this.id}}" method="POST">
+                        <input type="number" name="quantity" placeholder="Items Quantity">
+                        <input type="submit" value="Add To Cart">
+                    </form>
+                </td>
+                <td>
+                    <form action="/products/delete/{{this.id}}" method="POST">
+                        <input type="submit" value="Delete Product">
+                    </form>
+                </td>
+                <td>
+                    <form action="/products/put/{{this.id}}" method="GET">
+                        <input type="submit" value="Update Product">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h2>No hay productos</h2>
+    {{/if}}
+</div>
+
+<div>
+    {{#if isAdmin}}
+    <h1>Add Product</h1>
+    <form action="/products/" method="POST">
+        <input placeholder="Title" type="text" name="title" required>
+        <input placeholder="Price" type="number" step="0.01" name="price" required>
+        <input placeholder="Category" type="text" name="category" required>
+        <input placeholder="Descrption" type="text" name="description" required>
+        <input placeholder="Thumbnail" type="text" name="thumbnail" required>
+        <input type="submit" value="Add Product">
+    </form>
+    {{/if}}
+</div>
