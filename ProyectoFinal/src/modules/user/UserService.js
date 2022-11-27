@@ -22,7 +22,7 @@ class UserService {
     }
 
     checkValidFields(user){
-        if(user.email === undefined || user.email === '' || user.password === undefined || user.password === '' || user.name === undefined || user.name === '' || user.address === undefined || user.address === ''){
+        if(user.email === undefined || user.email === '' || user.password === undefined || user.password === '' || user.name === undefined || user.name === '' || user.address === undefined || user.address === '' || user.telephone === undefined || user.telephone === ''){
             throw new Error('Algun campo esta vacio o es invalido');
         }
     }
@@ -35,7 +35,7 @@ class UserService {
             user.password = encryptedPassword;
             const createCartId = await this.cartService.createCart(user.email,user.address);
             user.cart_Id = createCartId;
-            user.admin = true;
+            user.admin = false;
             sendEmailNewUser(process.env.ADMIN_EMAIL,process.env.RECEIVER_EMAIL,user);
             const newUser = await this.dao.saveNewUser(user);
             return newUser;

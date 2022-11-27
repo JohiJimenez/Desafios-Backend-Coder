@@ -7,9 +7,9 @@ cartRouter.get('/',authenticateToken,cartController.getCart);
 
 cartRouter.post('/',authenticateToken,cartController.createCart);
 cartRouter.post('/:id',authenticateToken,cartController.addProductToCart);
-cartRouter.post('/delete/:id',authenticateToken,cartController.removeProductosFormCart);
+cartRouter.post('/delete/:id',authenticateToken,cartController.removeProductsFormCart);
 
-cartRouter.delete('/delete/:id',authenticateToken,cartController.removeProductosFormCart);
+cartRouter.delete('/delete/:id',authenticateToken,cartController.removeProductsFormCart);
 
 
 module.exports = {

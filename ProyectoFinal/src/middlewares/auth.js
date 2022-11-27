@@ -50,8 +50,8 @@ const authenticateToken = ( req, res, next ) => {
           const userFound = await userService.findUser(user.email);
           if(userFound.cart_Id > user.cart_Id)user.cart_Id = userFound.cart_Id;  
           req.user = user;
-          const {email, name, password, cart_Id, address,id,admin} = user;
-          const accessToken = generateAccessToken({email, name, password, cart_Id, address,id,admin});
+          const {email, name, password, cart_Id, address,id,admin, telephone} = user;
+          const accessToken = generateAccessToken({email, name, password, cart_Id, address,id,admin, telephone});
           res.cookie("token",accessToken, {
             httpOnly:true
           });

@@ -53,7 +53,7 @@ class CartController {
         }
     }
 
-    async removeProductosFormCart(req, res) {
+    async removeProductsFormCart(req, res) {
         try {
             const product_id = req.params.id;
             const cart_id = req.user.cart_Id;

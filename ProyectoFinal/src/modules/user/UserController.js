@@ -36,7 +36,8 @@ class UserController {
                 email: user.email,
                 password: user.password,
                 address: user.address,
-                name: user.name
+                name: user.name,
+                telephone: user.telephone
             }
             const newUser = await userService.saveNewUser(userToAdd);
             if (newUser) res.status(201).redirect('/login');

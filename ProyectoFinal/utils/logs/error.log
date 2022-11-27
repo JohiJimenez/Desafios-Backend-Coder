@@ -1,0 +1,7 @@
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
+{"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
+{"level":"error","message":"Cart is Empty"}

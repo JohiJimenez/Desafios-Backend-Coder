@@ -1,4 +1,4 @@
-<form action="/productos">
+<form action="/products">
     <input type="submit" value="Products">
 </form>
 
@@ -28,7 +28,7 @@
                 <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
                 <td>{{this.quantity}}</td>
                 <td>
-                    <form action="/carrito/delete/{{this.id}}" method="POST">
+                    <form action="/cart/delete/{{this.id}}" method="POST">
                         <input type="submit" value="Remove From Cart">
                     </form>
                 </td>

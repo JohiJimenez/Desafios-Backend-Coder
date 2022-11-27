@@ -13,3 +13,10 @@
 {"level":"warn","message":"404 ruta /products/63820c94e28cab20cfcfdd5c, method GET not implemented"}
 {"level":"warn","message":"404 ruta /products/category, method GET not implemented"}
 {"level":"warn","message":"404 ruta /products/category/, method GET not implemented"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
+{"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
+{"level":"error","message":"Cart is Empty"}
