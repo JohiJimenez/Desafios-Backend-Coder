@@ -32,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use(logger.info);
 
+
 app.engine('hbs', engine({
     extname: '.hbs',
     defaultLayout: 'index.hbs',

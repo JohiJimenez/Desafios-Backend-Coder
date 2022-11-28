@@ -5,3 +5,7 @@
 {"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
 {"level":"error","message":"Usuarios validation failed: id: Cast to Number failed for value \"NaN\" (type number) at path \"id\""}
 {"level":"error","message":"Cart is Empty"}
+{"level":"error","message":"Login sessions require session support. Did you forget to use `express-session` middleware?"}
+{"level":"error","message":"Login sessions require session support. Did you forget to use `express-session` middleware?"}
+{"level":"error","message":"Login sessions require session support. Did you forget to use `express-session` middleware?"}
+{"level":"error","message":"Login sessions require session support. Did you forget to use `express-session` middleware?"}
